@@ -51,3 +51,18 @@ datename (month, order_date) as month_name,
 FORMAT(order_date, 'M') as order_month, -- M and d are case sensitive
 FORMAT(order_date, 'dddd') as day_name
 from sales.orders;
+
+select order_date, required_date, shipped_date, isnull(shipped_date, getdate()) as filled_date,
+DATEDIFF(DAY, order_date,isnull(shipped_date, getdate())) as day_diff,
+dateadd(day, 2, required_date) as day_added
+from sales.orders;
+
+-- Fill values temporary
+-- isnull / coalesce
+
+select shipped_date, isnull(shipped_date, getdate()) as filled_date
+from sales.orders;
+
+select shipped_date, isnull(shipped_date, getdate()) as filled_date,
+coalesce(shipped_date, getdate()) --gives time as well
+from sales.orders;
