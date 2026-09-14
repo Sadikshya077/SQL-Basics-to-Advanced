@@ -34,7 +34,7 @@
 	Projection (Pie) - Join (X) - Selection (Sigma)
 */
 
--- Find total customers from each state
+-- Find total customers from each state and city
 select state, count(customer_id) as total_customer 
 from sales.customers
 group by state, City
