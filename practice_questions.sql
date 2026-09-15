@@ -56,8 +56,8 @@ $1,000. Display only the order IDs where the total quantity of these premium ite
 greater than 3. */
 
 select order_id, sum(quantity) as total_quantity ,sum(list_price) as total_price,
-count(case when list_price>1000 then 1 end) as premium_items
+sum(case when list_price>1000 then quantity else 0 end) as premium_items
 from sales.order_items
-group by order_id;
+group by order_id
+having sum(case when list_price>1000 then quantity else 0 end) >3;
 
-select * from sales.order_items
