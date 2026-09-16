@@ -1,11 +1,11 @@
 /*
 	SQL JOIN
 	--------------
-	1. inner join -> join (gives common data only)
+	1. inner join /join (gives common data only)
 	2. left join
 	3. right join
 	4. outer join
-	5. self join
+	5. self join / join
 	6. cross join
 	7. natural join
 
@@ -54,3 +54,12 @@ group by concat(sc.first_name,' ',sc.last_name) ;
 
 
 select * from sales.order_items;
+
+-- self join
+-- Find staff name and manager names
+select concat(s1.first_name,' ',s1.last_name) as manager_name,
+concat(s2.first_name,' ',s2.last_name) as staff_name
+from sales.staffs s1
+join sales.staffs s2
+on s1.staff_id = s2.manager_id;
+
