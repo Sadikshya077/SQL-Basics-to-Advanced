@@ -111,6 +111,9 @@ full outer join sales.staffs s2
 on s1.staff_id = s2.manager_id
 
 --Natural join -> just use where clause
-select * from sales.customers sc, sales.orders so, sales.order_items soi
+select 
+	sc.first_name + ' '+ sc.last_name as customer_name,
+	count(so.order_id) as total_orders
+from sales.customers sc, sales.orders so
 where sc.customer_id = so.customer_id
- and so.order_id = soi.order_id;
+group by sc.first_name + ' '+ sc.last_name;
