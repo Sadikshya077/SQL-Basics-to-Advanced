@@ -109,3 +109,8 @@ select *
 from sales.staffs s1
 full outer join sales.staffs s2
 on s1.staff_id = s2.manager_id
+
+--Natural join -> just use where clause
+select * from sales.customers sc, sales.orders so, sales.order_items soi
+where sc.customer_id = so.customer_id
+ and so.order_id = soi.order_id;
