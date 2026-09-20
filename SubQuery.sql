@@ -54,3 +54,28 @@ select * from sales.orders where order_date = (
 			)
 	)
 );
+--Multi row subquery
+-- Find all the orders whose status is rejected or pending
+
+select * from sales.orders where order_status in (
+select order_status from sales.orders where order_status in (1,3)
+);
+
+-- Correlated subquery
+-- Find all the customers details whose status is rejected or pending
+
+-- without subquery -> it is slower as compared to with query as distinct has to be used
+
+select 
+	distinct sc.customer_id, sc.first_name, sc.last_name, sc.phone, sc.email, sc.street
+from sales.customers sc
+join sales.orders so
+on sc.customer_id = so.customer_id
+where order_status in (1,3)
+
+-- with subquery -> faster as distinct is used by default
+select customer_id, first_name, last_name, phone, email, street
+from sales.customers where customer_id in (
+	select customer_id from sales.orders where order_status in (1,3)
+);
+
