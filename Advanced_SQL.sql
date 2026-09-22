@@ -183,3 +183,5 @@ GO -- it means run upto here
 declare @OutputMessage Varchar(100)
 exec usp_checkOrderStatus @OrderID = 999999, @ResponseMessage = @OutputMessage Output
 select @OutputMessage as Order_Status_Message
+
+select @@SERVERNAME
