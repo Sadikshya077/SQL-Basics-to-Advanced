@@ -79,3 +79,29 @@ from sales.customers where customer_id in (
 	select customer_id from sales.orders where order_status in (1,3)
 );
 
+-- Find customers details whose order status is either pending or rejected,
+-- their total spent price must be more than 3000 and product model year of 2018.
+
+-- without subquery
+select distinct sc.customer_id, sc.first_name, sc.last_name, sc.email, sc.street, sc.city
+from sales.customers sc
+join sales.orders so
+on sc.customer_id = so.customer_id
+join sales.order_items soi
+on so.order_id = soi.order_id
+join production.products pp
+on soi.product_id = pp.product_id
+where so.order_status in (1,3)
+	and ((soi.list_price * soi.quantity) * (1-soi.discount)) >3000
+	and pp.model_year = 2018
+
+-- with subquery
+
+
+select * from sales.customers where customer_id in (
+	select customer_id from sales.orders where order_id in (
+		select order_id from sales.order_items where product_id in (
+			select product_id from production.products where model_year = 2018
+		) and ((list_price * quantity) * (1-discount)) > 3000
+	) and order_status in (1,3)
+);

@@ -64,7 +64,8 @@ join sales.staffs s2
 on s1.staff_id = s2.manager_id;
 
 -- cross join -> cross join is performed in the background of all joins
--- customer_id 1 searches for all customer_id 1 in order table and gives output, similarly for all.
+-- customer_id 1 searches for all customer_id 1 in order table and gives output, 
+-- similarly for all.
 -- cartesian product
 select * from sales.customers
 cross join sales.orders --takes time to execute
@@ -117,3 +118,4 @@ select
 from sales.customers sc, sales.orders so
 where sc.customer_id = so.customer_id
 group by sc.first_name + ' '+ sc.last_name;
+
