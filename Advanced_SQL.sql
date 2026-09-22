@@ -134,3 +134,52 @@ select @output_message as output
 
 select * from sales.customers
 where email = 'bob.marston@yahoo.com';
+
+
+select * from sales.orders;
+-- Find order status details using order id
+create or alter procedure usp_checkOrderStatus(
+	@OrderID int,
+	@ResponseMessage varchar(100) output
+) as
+Begin
+	set nocount on;
+	if not exists (select 1 from sales.orders where order_id = @OrderID)
+	begin
+		set @ResponseMessage= concat ('No order found with order id ',@OrderID,'.')
+		return
+	end
+
+	-- Declaration of variable to store shipping date and order status.
+	declare @ShippingDate Date
+	declare @OrderStatus Tinyint
+
+	-- Store shipping date and order status value of specific given order id
+	select 
+		@ShippingDate= shipped_date,
+		@OrderStatus = order_status
+	from sales.orders where order_id = @OrderID;
+
+	if @ShippingDate is not null
+	Begin
+		set @ResponseMessage = concat('Order ID: ',@OrderId,' has been delivered to its destination.')
+	end
+	else if @OrderStatus = 3
+	begin
+		set @ResponseMessage = Concat('Order ID: ',@OrderID,' has been rejected.')
+	end
+	else if @OrderStatus = 1
+	begin
+		set @ResponseMessage = Concat('Order ID: ',@OrderID,' is pending')
+	end
+	else
+	begin
+		set @ResponseMessage = Concat('Order ID: ',@OrderID,' is processing')
+	end
+end;
+GO -- it means run upto here
+
+
+declare @OutputMessage Varchar(100)
+exec usp_checkOrderStatus @OrderID = 999999, @ResponseMessage = @OutputMessage Output
+select @OutputMessage as Order_Status_Message
