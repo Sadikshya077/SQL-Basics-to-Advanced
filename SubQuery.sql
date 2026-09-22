@@ -95,9 +95,8 @@ where so.order_status in (1,3)
 	and ((soi.list_price * soi.quantity) * (1-soi.discount)) >3000
 	and pp.model_year = 2018
 
+
 -- with subquery
-
-
 select * from sales.customers where customer_id in (
 	select customer_id from sales.orders where order_id in (
 		select order_id from sales.order_items where product_id in (
@@ -105,3 +104,67 @@ select * from sales.customers where customer_id in (
 		) and ((list_price * quantity) * (1-discount)) > 3000
 	) and order_status in (1,3)
 );
+
+-- another method
+-- here we create a table and treat it as subquery
+
+select Concat(sc.first_name,' ', sc.last_name) as customer_name, total_price
+	from (
+		select 
+			so.customer_id, so.order_id, so.order_status, so.order_date,
+			soi.list_price as order_price, soi.discount, soi.quantity, ((soi.list_price) * (soi.quantity) * (1-soi.discount))
+			as total_price, pp.product_id, pp.model_year, pp.list_price as product_price
+			from sales.orders so
+			join sales.order_items soi
+			on so.order_id = soi.order_id
+			join production.products pp
+			on soi.product_id = pp.product_id
+				where so.order_status in (1,3)
+					and ((soi.list_price) * (soi.quantity) * (1-soi.discount)) >3000
+					and pp.model_year = 2018
+) as data
+join sales.customers sc
+on data.customer_id = sc.customer_id;
+
+
+/*
+	CTE (Commom Table Expressions)
+	--------------------------------
+	Is CTE temporary table or temporary data table
+	-> it is a temporary data table
+
+	with cte_name as (
+		query...
+	)select * from cte_name;
+	
+
+	with cte_name as(
+		query...
+	)
+	cte_name2 as (
+		query...
+	)
+*/
+
+-- doing above operation using CTE
+with product_order as (
+	select 
+		so.customer_id, so.order_id, so.order_status, so.order_date,
+		soi.list_price as order_price, soi.discount, soi.quantity, ((soi.list_price) * (soi.quantity) * (1-soi.discount))		
+		as total_price, pp.product_id, pp.model_year, pp.list_price as product_price
+		from sales.orders so
+		join sales.order_items soi
+		on so.order_id = soi.order_id
+		join production.products pp
+		on soi.product_id = pp.product_id
+		where so.order_status in (1,3)
+		and ((soi.list_price) * (soi.quantity) * (1-soi.discount)) >3000
+		and pp.model_year = 2018
+),
+customer_total_spent as(
+select concat(sc.first_name,' ',sc.last_name) as customer_name, total_price
+from product_order po
+join sales.customers sc
+on po.customer_id = sc.customer_id
+)
+select sum(total_price) as total_spent from customer_total_spent;
