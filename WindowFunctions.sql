@@ -11,5 +11,16 @@
 		offset -> how many rows to skip is 1 in default
 	7. Running Sum -> Sum(col_name)
 	8. Moving Average -> Avg(col_name)
+
+	Syntax
+	------------------
+	select
+		col1, col2, col3, col4
+		win_func() over(partition by col_name order_by col_name)
+	from table_name;
+
+	here partition is grouping and is used only if we want it but order by is compulsory
 */
+
+
 
