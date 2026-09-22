@@ -74,8 +74,56 @@ from BikeStores.production.products
 
 select * from (
 	select product_id, product_name, brand_id, category_id, model_year, list_price,
-	DENSE_RANK() OVER(partition by model_year order by list_price) as dense_rank_num -- doesn't skip value
+	DENSE_RANK() OVER(partition by model_year order by list_price) as dense_rank_num
 	from BikeStores.production.products
 ) as data
 where dense_rank_num = 2 --gives second highest number
 
+-- NTile
+select product_id, product_name, brand_id, category_id, model_year, list_price,
+Ntile(10) OVER(order by list_price) as ntile_num 
+from BikeStores.production.products
+
+--Lead
+select 
+	Transaction_ID, USER_ID, Transaction_Amount, Transaction_Type, Time_of_Transaction,
+	Device_Used, Location, Previous_Fraudulent_Transactions, Account_Age,
+	Number_of_Transactions_Last_24H, Payment_Method, Fraudulent,
+	lead(Payment_Method,2) OVER(order by Transaction_Amount desc) as next_payment_method
+from Fraud.dbo.[Fraud Detection Dataset]; 
+
+
+--Lag
+select 
+	Transaction_ID, USER_ID, Transaction_Amount, Transaction_Type, Time_of_Transaction,
+	Device_Used, Location, Previous_Fraudulent_Transactions, Account_Age,
+	Number_of_Transactions_Last_24H, Payment_Method, Fraudulent,
+	lag(Payment_Method,2) OVER(order by Transaction_Amount desc) as previous_payment_method
+from Fraud.dbo.[Fraud Detection Dataset]; 
+
+
+-- Running sum (cumulative sum)
+/*
+	1,2,3,4,5
+	1+2=3
+	3+3=6
+	6+4=10
+
+	but here 1,1,1,2,3,3
+	1+1+1=3
+	3+2=5
+	5+3+3=11 same for average as well
+*/
+
+select product_id, product_name, brand_id, category_id, model_year, list_price,
+sum(list_price) OVER(order by list_price) as running_sum
+from BikeStores.production.products
+
+select product_id, product_name, brand_id, category_id, model_year, list_price,
+sum(list_price) OVER(partition by model_year order by list_price) as running_sum
+from BikeStores.production.products
+
+-- moving average 
+select product_id, product_name, brand_id, category_id, model_year, list_price,
+avg(list_price) OVER(partition by model_year order by list_price) as moving_average
+from BikeStores.production.products
