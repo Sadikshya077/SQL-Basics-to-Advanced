@@ -1,21 +1,2 @@
-# OS / editor junk
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Data Modeler backups and logs
-*.bak
-*.log
-*~
-
-# Secrets and local config
-.env
-*.env
-*credentials*
-*.pem
-
-# Large or generated data
-*.dump
-*.csv
-*.sqlite
+# Data Modeler session files
+*.local
