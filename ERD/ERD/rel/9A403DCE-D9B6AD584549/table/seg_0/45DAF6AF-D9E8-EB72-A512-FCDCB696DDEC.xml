@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="45DAF6AF-D9E8-EB72-A512-FCDCB696DDEC" name="Store">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:31:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Store_Id" id="9C328A4E-2604-9349-06FB-201B1528A430">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:32:34 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Store_Name" id="F8BEA514-BA8D-2833-E5A6-264168921A3F">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:32:34 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DBBD3E20-DD8A-B1FD-C32D-67DC6762D58A" name="Store_PK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:32:34 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C328A4E-2604-9349-06FB-201B1528A430"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

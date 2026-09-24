@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="06F264DD-E95C-01E6-3839-099644283BCD" name="Customers">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:42:32 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Customer_Id" id="2000C523-8F8C-75CC-33A8-213541513F23">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:54:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Customer_Name" id="6302046B-63BF-7FA6-3B40-3ECF8575D812">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:54:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="674F6A0D-F920-692D-9716-BE3A1C299BC9">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:54:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Phone" id="D3A5E2A7-0190-6104-D5C6-CBBA1854F7F6">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:54:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address" id="016AD101-5963-8DFB-6887-3147ABF4B93A">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:54:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="377BDF53-25DE-E090-73B3-70DE5EABCCD0" name="Customers_PK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:54:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2000C523-8F8C-75CC-33A8-213541513F23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="893437B1-C658-44B5-2107-7372CDF390B6" name="C_Email_UN">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:59:17 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="674F6A0D-F920-692D-9716-BE3A1C299BC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="335D1BAE-8283-8E0E-80F6-A2CAE896770D" name="C_Phone_UN">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 22:59:17 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3A5E2A7-0190-6104-D5C6-CBBA1854F7F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

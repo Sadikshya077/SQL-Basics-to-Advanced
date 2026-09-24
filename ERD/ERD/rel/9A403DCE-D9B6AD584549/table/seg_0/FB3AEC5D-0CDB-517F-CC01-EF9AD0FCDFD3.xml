@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FB3AEC5D-0CDB-517F-CC01-EF9AD0FCDFD3" name="Orders">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:05:46 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Order_Id" id="31F045F8-30CA-34C8-A86B-E9E56F75A2A4">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_Status" id="365FB10D-A707-A2D4-7607-9897B542DE2B">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_Date" id="ACC7D1FD-86C2-98AD-7FF7-502E6FE773A2">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Required_Date" id="30B0E7D3-E295-CC1B-9E90-84FA5EA85D44">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Shipped_Date" id="892284D5-8D33-3FCD-9BBE-7AB288C8FF7F">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Store_Id" id="5FEA6F59-595C-3EF4-D7CF-4B2665EB8C69">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:33:22 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C12C11DB-E71E-B830-0269-5958DAC56F02" referredColumn="9C328A4E-2604-9349-06FB-201B1528A430"/>
+</associations>
+</Column>
+<Column name="Customer_Id" id="5702D1BD-3E31-E7A5-8D33-5210D5FA7FF0">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C7C62663-DCB0-D3C6-BDCF-73A5B08CCA9C" referredColumn="2000C523-8F8C-75CC-33A8-213541513F23"/>
+</associations>
+</Column>
+<Column name="Staff_Id" id="95DFBCFC-83AF-4AC8-62A7-E5033D2280B5">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E84FB3B6-AAB1-DB22-09CB-0B7C0D7D8A23" referredColumn="AB1F4FBF-43B7-82EA-9558-F6F6DAC838BC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="78F93952-1D75-2256-9E05-3F68BE8185DB" name="Orders_PK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="31F045F8-30CA-34C8-A86B-E9E56F75A2A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="00F723D3-66DE-D714-6BEE-248A26A9A0F3" name="idx_order_status">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:25:23 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="365FB10D-A707-A2D4-7607-9897B542DE2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="064AC8AA-7162-79A8-BC8A-15C6E19FAF2B" name="Or_Cu_FK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5702D1BD-3E31-E7A5-8D33-5210D5FA7FF0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A41258A9-0994-6A9B-0032-8E47E3AF751D" name="Orders_Staffs_FK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:15:00 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="95DFBCFC-83AF-4AC8-62A7-E5033D2280B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3F0EB426-D4AB-9A02-FEBB-C432392DDC9D" name="Orders_Store_FK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:34:35 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5FEA6F59-595C-3EF4-D7CF-4B2665EB8C69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

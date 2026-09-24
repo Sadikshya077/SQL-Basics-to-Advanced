@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BE57E483-C7E8-45E0-5DF1-03CD9BC8092C" name="Order_Items">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:57:26 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Order_Id" id="2FC1D67D-7462-CCA4-44F8-1E4620FA4D02">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:59:49 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FE0A07FD-C3F9-7021-1409-E78E984D8B5D" referredColumn="31F045F8-30CA-34C8-A86B-E9E56F75A2A4"/>
+</associations>
+</Column>
+<Column name="Item_Id" id="1304D43B-0B30-40FB-DA09-55B4F9EB24F7">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:59:49 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Quantity" id="3A44487B-98A6-D94F-F33C-09ABD825DB0C">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:59:49 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="list_price" id="3D1E962B-B037-0454-A6BD-C95AB94610BC">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:59:49 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>28</dataTypePrecision>
+<ownDataTypeParameters>,28,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Discount" id="A8C1A322-67C3-7327-61EA-7506CE75F6B0">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:59:49 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>28</dataTypePrecision>
+<ownDataTypeParameters>,28,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ACCFDCCE-BB73-7B38-1B7E-4CBD3E4A5A06" name="Order_Items_PK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:59:49 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FC1D67D-7462-CCA4-44F8-1E4620FA4D02"/>
+<colUsage columnID="1304D43B-0B30-40FB-DA09-55B4F9EB24F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0ED7A449-9618-B238-9157-1CB1A5DC6160" name="Order_Items_Orders_FK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-24 00:00:34 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FC1D67D-7462-CCA4-44F8-1E4620FA4D02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

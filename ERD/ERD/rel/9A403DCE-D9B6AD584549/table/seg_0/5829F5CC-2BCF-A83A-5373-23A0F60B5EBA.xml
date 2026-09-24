@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5829F5CC-2BCF-A83A-5373-23A0F60B5EBA" name="Staffs">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:01:30 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Staff_Id" id="AB1F4FBF-43B7-82EA-9558-F6F6DAC838BC">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:05:16 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Staff_Name" id="08901B83-57E0-44BE-4A51-BCE061736DE1">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:05:16 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Staff_Type" id="73948849-6DB4-013E-C6CA-2F4D6EDBB41B">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:05:16 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Staff_Position" id="FCE42EAF-264A-F2C8-3436-EBA178CA787C">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:05:16 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Staff_Email" id="236A92F1-76A5-19DE-4374-0856A9EB2F4D">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:05:16 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>35 BYTE</dataTypeSize>
+<ownDataTypeParameters>35 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Manager_Id" id="7B252D50-1CDA-EE1E-B391-489012C885C3">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:35:15 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDB6ACF4-1F6C-0E05-C4DD-7928FA46C73B" referredColumn="AB1F4FBF-43B7-82EA-9558-F6F6DAC838BC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="50AEB8FE-4C9A-BACF-642F-156B7A46D637" name="Staffs_PK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:05:16 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB1F4FBF-43B7-82EA-9558-F6F6DAC838BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DDF92D31-2C81-E656-3B9F-24D0E2D19B48" name="Staffs_Staffs_FK">
+<createdBy>acer</createdBy>
+<createdTime>2026-09-23 23:35:45 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B252D50-1CDA-EE1E-B391-489012C885C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
